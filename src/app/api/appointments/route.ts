@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const result = await query(
       `SELECT id, patient_name, patient_email, patient_phone, patient_age, doctor_id, appointment_date, appointment_time, status

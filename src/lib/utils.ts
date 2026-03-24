@@ -12,8 +12,11 @@ export async function comparePassword(password: string, hash: string): Promise<b
   return bcrypt.compare(password, hash);
 }
 
-export function generateToken(payload: any, expiresIn: string = '7d'): string {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn });
+export function generateToken(
+  payload: Record<string, unknown>,
+  expiresIn: jwt.SignOptions['expiresIn'] = '7d'
+): string {
+  return jwt.sign(payload, JWT_SECRET as jwt.Secret, { expiresIn });
 }
 
 export function verifyToken(token: string): any {
@@ -52,7 +55,7 @@ export function truncateText(text: string, length: number = 150, suffix: string 
   return text.substring(0, length).trim() + suffix;
 }
 
-export function formatDate(date: Date, format: string = 'MMM DD, YYYY'): string {
+export function formatDate(date: Date): string {
   // Simple date formatter - consider using date-fns for production
   const options: any = {
     year: 'numeric',

@@ -8,6 +8,7 @@ interface CardProps {
   description?: string;
   image?: string;
   icon?: React.ReactNode;
+  children?: React.ReactNode;
   href?: string;
   badge?: string;
   cta?: string;
@@ -20,6 +21,7 @@ export function Card({
   description,
   image,
   icon,
+  children,
   href,
   badge,
   cta,
@@ -80,6 +82,9 @@ export function Card({
             {cta} →
           </span>
         )}
+
+        {/* Custom Content */}
+        {children}
       </div>
     </div>
   );

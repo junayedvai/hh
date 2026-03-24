@@ -1,6 +1,5 @@
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
-import { Card } from '@/components/Card';
 import { DoctorCard } from '@/components/DoctorCard';
 
 const doctorImage = 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=500&fit=crop';

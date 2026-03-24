@@ -86,7 +86,7 @@ export default function DoctorsPage() {
               phone={doctor.phone}
               experience={doctor.experience}
               fee={doctor.fee}
-              href={`/doctors/${doctor.name.toLowerCase().replace(/\s+/g, '-')}`}
+              href={`/appointment?doctor=${encodeURIComponent(doctor.name)}`}
             />
           ))}
         </div>
